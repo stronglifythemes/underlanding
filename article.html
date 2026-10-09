@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="builder" content="Stronglify">
+<link rel="icon" type="image/x-icon" href="https://media.stronglify.com/295/favicon-1791318615-1791468896.svg">
+<title>Cómo diseñar mejores experiencias digitales | Underlanding</title>
+<meta name="description" content="Una buena experiencia digital comienza entendiendo a las personas que usan el producto, no las pantallas que queremos construir.">
+<meta name="robots" content="index">
+<link rel="canonical" href="https://stronglifythemes.github.io/underlanding/"><style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}img{max-width:100%;height:auto}
+</style><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://media.stronglify.com/tailwind-play-3.4.17.js"></script>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #fff; color: #fff; font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+    button, input { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 3px solid #5a7183; outline-offset: 5px; }
+
+    .page {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: min(100% - 48px, 1440px);
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+    .page::before, .page::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: min(48vw, 700px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .page::before { top: 2%; left: -17%; background: #d9e9ff; opacity: .8; }
+    .page::after { right: -16%; bottom: 13%; background: #eadff9; opacity: .75; }
+    main { display: contents; }
+
+    .glass {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      background: linear-gradient(132deg, rgba(91, 126, 173, .60), rgba(147, 185, 200, .43) 46%, rgba(117, 106, 163, .61));
+      box-shadow: inset 0 2px 2px rgba(255,255,255,.73), inset 0 -18px 40px rgba(60,78,132,.10), 0 25px 55px rgba(76,95,149,.16);
+      -webkit-backdrop-filter: blur(32px) saturate(135%);
+      backdrop-filter: blur(32px) saturate(135%);
+    }
+    .glass::before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      top: -50%; left: -16%;
+      width: 65%; height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(255,255,255,.45), rgba(255,255,255,0) 68%);
+      transform: rotate(-23deg);
+      pointer-events: none;
+    }
+    .glass::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      right: -17%; bottom: -72%;
+      width: 64%; aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(255,255,255,.18);
+      filter: blur(34px);
+      pointer-events: none;
+    }
+    .glass > * { position: relative; z-index: 1; }
+    h1, h2, p { margin: 0; }
+    h1, h2 { font-family: Manrope, sans-serif; font-weight: 600; letter-spacing: -.065em; }
+    .description { max-width: 38ch; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.6; text-shadow: 0 1px 14px rgba(43,58,71,.46); }
+
+    .switch-wrap {
+      width: fit-content;
+      margin-top: 38px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px 12px 20px;
+      border-radius: 999px;
+      background: rgba(86, 112, 161, .82);
+      box-shadow: inset 0 1px 2px rgba(255,255,255,.55), 0 10px 35px rgba(80,92,104,.19);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .015em;
+      cursor: pointer;
+    }
+    .switch-wrap input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+    .switch-track {
+      display: block;
+      width: 47px;
+      height: 27px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.36);
+      box-shadow: inset 0 2px 7px rgba(57,72,84,.25);
+      transition: background .3s;
+    }
+    .switch-track::before {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 7px rgba(40,54,67,.25);
+      transition: transform .3s;
+    }
+    .switch-wrap input:checked + .switch-track { background: rgba(255,255,255,.65); }
+    .switch-wrap input:checked + .switch-track::before { transform: translateX(20px); }
+    .switch-wrap:has(input:focus-visible) { outline: 3px solid #5a7183; outline-offset: 4px; }
+
+    .ending {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      min-height: min(64vw, 570px);
+      padding: clamp(32px, 6vw, 82px);
+    }
+    .ending h1 { max-width: 11ch; font-size: clamp(58px, 8.4vw, 132px); line-height: .99; text-shadow: 0 4px 35px rgba(37,51,63,.15); }
+    .ending .description { margin-top: 28px; }
+
+    .ideas { padding-top: clamp(34px, 5vw, 68px); }
+    .ideas h2 {
+      padding: clamp(34px, 5vw, 68px);
+      border-radius: 38px;
+      background: linear-gradient(132deg, rgba(91,126,173,.60), rgba(147,185,200,.43) 46%, rgba(117,106,163,.61));
+      box-shadow: inset 0 2px 2px rgba(255,255,255,.73), 0 25px 55px rgba(76,95,149,.16);
+      -webkit-backdrop-filter: blur(32px);
+      backdrop-filter: blur(32px);
+      font-size: clamp(42px, 5.8vw, 84px);
+      line-height: 1.05;
+      text-shadow: 0 1px 18px rgba(43,58,71,.35);
+    }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 45px; }
+    .cards article {
+      display: flex;
+      align-items: end;
+      min-height: 300px;
+      padding: 30px;
+      border-radius: 32px;
+    }
+    .cards p { max-width: 16ch; font-family: Manrope, sans-serif; font-size: clamp(21px, 2vw, 29px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; text-shadow: 0 1px 14px rgba(43,58,71,.38); }
+    .cards article:nth-child(2) { background: linear-gradient(145deg, rgba(91,147,181,.64), rgba(160,203,206,.43), rgba(109,119,169,.60)); }
+    .cards article:nth-child(3) { background: linear-gradient(145deg, rgba(133,119,177,.64), rgba(195,177,211,.41), rgba(100,139,178,.61)); }
+    .cards article:nth-child(4) { background: linear-gradient(145deg, rgba(95,133,178,.65), rgba(173,198,221,.42), rgba(116,107,166,.64)); }
+
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 130px; padding: 32px 48px; }
+    .brand { font-family: Manrope, sans-serif; font-size: clamp(32px, 4vw, 54px); font-weight: 800; letter-spacing: -.07em; }
+    .site-header span, .site-footer { text-shadow: 0 1px 10px rgba(43,58,71,.3); }
+    .site-header span, .footer-note { font-size: 13px; font-weight: 500; }
+    .mobile-menu { display: none; }
+    .site-footer { display: flex; flex-direction: column; align-items: start; justify-content: space-between; gap: 28px; min-height: 265px; padding: 42px 48px; background: linear-gradient(125deg, rgba(82,119,169,.77), rgba(139,173,194,.49) 48%, rgba(112,101,159,.72)); }
+    .footer-statement { font-family: Manrope, sans-serif; font-size: clamp(30px, 3.2vw, 46px); font-weight: 600; letter-spacing: -.06em; line-height: 1.1; }
+    .site-footer nav { display: flex; flex-wrap: wrap; gap: 12px 26px; font-size: 14px; font-weight: 600; }
+    .site-footer nav a { opacity: .85; transition: opacity .2s; }
+    .site-footer nav a:hover { opacity: 1; }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      min-height: min(72vw, 710px);
+      padding: clamp(32px, 6vw, 82px);
+      background: linear-gradient(142deg, rgba(89,133,185,.72), rgba(158,195,212,.46) 42%, rgba(109,100,169,.74));
+    }
+    .hero h1 { max-width: 11ch; font-size: clamp(65px, 10vw, 155px); line-height: .96; text-shadow: 0 4px 35px rgba(37,51,63,.17); }
+    .hero .description { margin-top: 32px; }
+
+    @media (max-width: 850px) {
+      .cards { grid-template-columns: 1fr; }
+      .cards article { min-height: 210px; }
+      .ending, .hero { min-height: 540px; }
+    }
+    @media (max-width: 600px) {
+      .page { width: min(100% - 24px, 1440px); gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+      .glass { border-radius: 28px; }
+      .ending, .hero { min-height: 530px; padding: 30px; }
+      .ending h1 { font-size: clamp(56px, 15vw, 86px); }
+      .hero h1 { font-size: clamp(62px, 17vw, 100px); }
+      .ideas { padding-top: 40px; }
+      .ideas h2 { padding: 32px 28px; border-radius: 28px; }
+      .cards { gap: 12px; margin-top: 26px; }
+      .cards article { min-height: 190px; padding: 26px; border-radius: 28px; }
+      .site-header { min-height: 100px; padding: 24px 26px; gap: 12px; flex-direction: column; align-items: start; }
+      .site-header .brand { font-size: 27px; }
+      .site-header span { max-width: none; text-align: left; }
+      .mobile-menu { display: block; width: 100%; margin-top: 8px; }
+      .mobile-menu summary { width: fit-content; padding: 11px 20px; border-radius: 999px; background: rgba(83,108,157,.72); box-shadow: inset 0 1px 2px rgba(255,255,255,.5); font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; }
+      .mobile-menu summary::-webkit-details-marker { display: none; }
+      .mobile-menu summary:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+      .mobile-menu nav { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; }
+      .mobile-menu nav a { width: fit-content; padding: 8px 0; font-size: 16px; font-weight: 600; }
+      .site-footer { min-height: 310px; padding: 32px 28px; gap: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .switch-track, .switch-track::before { transition: none; } }
+
+    .content-card { min-height: 520px; padding: clamp(32px, 6vw, 82px); }
+    .content-card h1, .reading h1 { max-width: 14ch; font-size: clamp(52px, 7vw, 108px); line-height: 1; }
+    .content-card h2 { margin-top: 52px; font-size: clamp(30px, 4vw, 50px); }
+    .content-card p { max-width: 64ch; margin-top: 24px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.65; }
+    .reading { padding: clamp(30px, 6vw, 82px); }
+    .reading > header { max-width: 850px; }
+    .reading > header > a { display: inline-block; margin-bottom: 20px; font-size: 14px; font-weight: 700; }
+    .reading > header > p { max-width: 62ch; margin-top: 28px; font-size: 20px; line-height: 1.6; }
+    .reading > img, .reading figure img { display: block; width: 100%; height: auto; border-radius: 28px; }
+    .reading > img { max-height: 620px; margin: 48px 0; object-fit: cover; }
+    .reading > div { max-width: 760px; }
+    .reading > div p, .reading li { margin-top: 22px; font-size: 18px; line-height: 1.75; }
+    .reading h2 { margin-top: 60px; font-size: clamp(31px, 4vw, 48px); }
+    .reading h3 { margin-top: 48px; font: 600 27px Manrope, sans-serif; letter-spacing: -.04em; }
+    .reading ul, .reading ol { margin: 28px 0; padding-left: 26px; }
+    .reading blockquote { margin: 54px 0; padding: 14px 0 14px 30px; font: 600 29px Manrope, sans-serif; letter-spacing: -.04em; }
+    .reading figure { margin: 54px 0; }
+    .reading figcaption { margin-top: 12px; font-size: 14px; }
+    .reading a { text-decoration: underline; text-underline-offset: 4px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .blog-grid article { padding: 30px; min-height: 330px; display: flex; flex-direction: column; }
+    .blog-grid article h2 { margin: auto 0 14px; font-size: clamp(22px, 2vw, 30px); line-height: 1.15; }
+    .blog-grid article p { margin: 0; font-size: 15px; line-height: 1.55; }
+    .blog-grid article a { margin-top: 22px; font-size: 14px; font-weight: 700; }
+    .blank-slot { min-height: 520px; }
+    @media (max-width: 850px) { .blog-grid { grid-template-columns: 1fr; } .blog-grid article { min-height: 220px; } }
+    @media (max-width: 600px) { .content-card, .reading { padding: 30px; } .reading > img, .reading figure img { border-radius: 22px; } }
+  </style></head>
+<body>
+  <div class="page" id="page">
+    <footer class="site-footer glass" id="site-footer">
+      <p class="footer-statement">Hasta aquí. O desde aquí.</p>
+      <nav aria-label="Navegación del pie">
+        
+        <a href="/underlanding/">Inicio</a>
+        
+        <a href="/underlanding/page">Nosotros</a>
+        
+        <a href="/underlanding/blog">Blog</a>
+        
+      </nav>
+      <p class="footer-note">Hecho para mirar de otra manera.</p>
+    </footer>
+
+    <main>
+      <article class="reading glass">
+        <header>
+          <a href="blog.html">Diseño</a>
+          <h1>Cómo diseñar mejores experiencias digitales</h1>
+          <p>Una buena experiencia digital comienza entendiendo a las personas que usan el producto, no las pantallas que queremos construir.</p>
+        </header>
+      
+        <img src="https://media.stronglify.com/295/underlanding-01-1791318546-1791468901.png" alt="Portátil con código abierto sobre un escritorio de trabajo" width="1600" height="900">
+      
+        <div><p style="text-align: left;">Diseñar no es decorar. Es tomar decisiones que ayudan a alguien a lograr lo que vino a hacer, con el menor esfuerzo posible. Cuando esas decisiones están bien tomadas, casi nadie las nota; cuando fallan, todos las sufren.</p><p style="text-align: left;">En este artículo repasamos los principios que usamos en cada proyecto y cómo aplicarlos desde el primer boceto. Si quieres ver cómo trabajamos, visita <a href="/underlanding/page">nuestra página de proceso</a>.</p><h2 style="text-align: left;"> Empezar por las personas </h2><p style="text-align: left;">Antes de abrir una herramienta de diseño conviene responder tres preguntas sencillas sobre quién va a usar el producto:</p><ul style="text-align: left;"><li>Qué intenta conseguir cuando llega.</li><li>Qué le impide conseguirlo hoy.</li><li>Cómo sabrá que lo consiguió.</li></ul><h3 style="text-align: left;"> Escuchar antes de proponer </h3><p style="text-align: left;">Una conversación de veinte minutos con un usuario real suele revelar más que una semana de suposiciones. Anota sus palabras exactas: son el mejor material para títulos, botones y mensajes.</p><p style="text-align: left;"><em>El buen diseño es tan poco diseño como sea posible.</em></p><img  src="https://media.stronglify.com/295/underlanding-02-1791318551-1791468902.png" alt="Equipo revisando ideas alrededor de una mesa" /><p style="text-align: left;">Las mejores decisiones salen de revisar el trabajo en equipo.</p><h2 style="text-align: left;"> Simplificar cada paso </h2><p style="text-align: left;">Una vez claro el objetivo, el trabajo consiste en quitar todo lo que no ayuda a alcanzarlo:</p><ol style="text-align: left;"><li>Reducir las opciones visibles a las que realmente se usan.</li><li>Escribir textos cortos y concretos.</li><li>Probar con personas reales y ajustar.</li></ol><p style="text-align: left;">Repetir este ciclo con constancia es lo que convierte un producto correcto en uno que la gente disfruta usar.</p></div>
+      </article>
+    </main>
+    <header class="site-header glass" id="site-header">
+      <a class="brand" href="/underlanding/" aria-label="Underlanding, ir al inicio">underlanding</a>
+      <span>Una landing al revés</span>
+      <details class="mobile-menu">
+        <summary>Menú</summary>
+        <nav aria-label="Menú móvil">
+          
+          <a href="/underlanding/">Inicio</a>
+          
+          <a href="/underlanding/page">Nosotros</a>
+          
+          <a href="/underlanding/blog">Blog</a>
+          
+        </nav>
+      </details>
+    </header>
+
+  </div><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const page = document.getElementById('page');
+  const main = page && page.querySelector('main');
+  const header = document.getElementById('site-header');
+  const footer = document.getElementById('site-footer');
+  const hero = document.getElementById('inicio');
+  const ending = document.getElementById('final');
+  const toggle = document.getElementById('recompose');
+  if (!page || !main || !header || !footer || !hero || !ending || !toggle) return;
+  toggle.addEventListener('change', function () {
+    if (this.checked) {
+      page.prepend(header); main.prepend(hero); main.append(ending); page.append(footer);
+    } else {
+      page.prepend(footer); main.prepend(ending); main.append(hero); page.append(header);
+    }
+  });
+});
+</script></body>
+</html>
